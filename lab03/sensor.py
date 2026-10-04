@@ -15,5 +15,4 @@ for i in range(n):
             line_cnt += 1
         if grad > max_grad:
             max_grad = grad
-print(n, error_cnt, line_cnt, f"{max_grad:.1f}", f"{sum_grad/(n-
-error_cnt):.1f}", sep="\n")
+print(n, error_cnt, line_cnt, f"{max_grad:.1f}", f"{sum_grad/(n-error_cnt):.1f}", sep="\n")
