@@ -16,12 +16,13 @@ def ranking(names, scores):
     new_names = {}    
     n = len(names)
     for i in range(n):
-        new_names += {scores[i]:names[i]}
-    new_names = sorted(new_names)
-    return(new_names.values())
+        new_names[names[i]] = [scores[i]]
+    new_names = dict(sorted(new_names.items(), key=lambda item: item[1], reverse=True))
+    return list(new_names.keys())
     
 def above_average(names, scores):
-    new_names = []
+    new_names = []    
+    n = len(names)
     aver = average(scores)
     for i in range(n):
         if scores[i] > aver:
