@@ -10,7 +10,7 @@ def winner(names, scores):
 
 def average(scores):
     if len(scores) == 0: return 0.0
-    return sum(scores)/len(scores)
+    return round(sum(scores)/len(scores), 2)
 
 def ranking(names, scores):
     new_names = {}    
