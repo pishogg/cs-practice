@@ -1,0 +1,36 @@
+def winner(names, scores):
+    n = len(names)
+    max_score = -10**10
+    name_win = ''
+    for i in range(n):
+        if scores[i] > max_score:
+            max_score = scores[i]
+            name_win = names[i]
+    return name_win
+
+def average(scores):
+    if len(scores) == 0: return 0.0
+    return sum(scores)/len(scores)
+
+def ranking(names, scores):
+    new_names = {}    
+    n = len(names)
+    for i in range(n):
+        new_names += {scores[i]:names[i]}
+    new_names = sorted(new_names)
+    return(new_names.values())
+    
+def above_average(names, scores):
+    new_names = []
+    aver = average(scores)
+    for i in range(n):
+        if scores[i] > aver:
+            new_names += [names[i]]
+    return new_names
+
+names =  ["Аня", "Боря", "Вика"]
+scores = [7.0,   9.0,    9.0]
+
+print(
+    winner(names, scores), average(scores), ranking(names, scores), above_average(names, scores), sep='\n'
+)
