@@ -28,10 +28,3 @@ def above_average(names, scores):
         if scores[i] > aver:
             new_names += [names[i]]
     return new_names
-
-names =  ["Аня", "Боря", "Вика"]
-scores = [7.0,   9.0,    9.0]
-
-print(
-    winner(names, scores), average(scores), ranking(names, scores), above_average(names, scores), sep='\n'
-)
