@@ -1,5 +1,5 @@
 def read_rows(lines):
-    file = open('lab05/' + lines, encoding="utf-8")
+    file = open(lines, encoding="utf-8")
     data = []
     column = file.readline().strip().split(',')
 
