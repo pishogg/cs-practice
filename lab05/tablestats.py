@@ -1,18 +1,21 @@
 def read_rows(lines):
-    file = open(lines, encoding="utf-8")
     data = []
-    column = file.readline().strip().split(',')
+    column = None
 
-    with file as table:
-        for line in table:
-            line = line.strip()
-            if not line: continue
-            values = line.split(',')
-            if len(values) != len(column): continue
-            row = {}
-            for i in range(len(column)):
-                row[column[i].strip()] = values[i].strip()
-            data.append(row)
+    for line in lines:
+        line = line.strip()
+        if not line: continue
+        
+        values = [value.strip() for value in line.split(',')]
+
+        if column is None:
+            column = values
+            continue
+        if len(values) != len(column): continue
+        row = {}
+        for i in range(len(column)):
+            row[column[i]] = values[i]
+        data.append(row)
     return data
 
 
