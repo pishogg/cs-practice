@@ -22,19 +22,19 @@ def common(list1, list2):
         for i in list2:
             if i in list1:
                 com_list += [i]
-    return com_list
+    return sorted(set(com_list))
         
 def only_in_first(list1, list2):
     uni_list = []
     if len(list1) <= len(list2):
         for i in list1:
-            if i  not in list2:
+            if i not in list2:
                 uni_list += [i]
     else:
         for i in list2:
-            if i in list1:
+            if i not in list1:
                 uni_list += [i]
-    return uni_list
+    return sorted(set(uni_list))
 
 print(count_items([1, 2, 2, 2]))    # {"ошибка": 2, "запуск": 1, "проверка": 1}
 print(unique_sorted([]))  # ["запуск", "ошибка", "проверка"]
